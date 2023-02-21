@@ -70,3 +70,7 @@ Vehicle
 future plans:
 
 - image detection for the vehicles that entered and leaved the parking garage
+
+for database UML diagram:
+npx prisma generate
+https://dbdiagram.io/d/63f49c83296d97641d828fe2
