@@ -1,10 +1,18 @@
 import { prismaDb } from '../src/db.server';
 
+// create random email
+function randomEmail() {
+  const randomString =
+    Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15);
+  return randomString + '@example.com';
+}
+
 async function seedDatabase() {
   // Create some users
   const user1 = await prismaDb.user.create({
     data: {
-      email: 'user1@example.com',
+      email: randomEmail(),
       name: 'John Doe',
       password: 'password123',
       role: 'USER',
@@ -12,7 +20,7 @@ async function seedDatabase() {
   });
   const user2 = await prismaDb.user.create({
     data: {
-      email: 'user2@example.com',
+      email: randomEmail(),
       name: 'Jane Smith',
       password: 'password456',
       role: 'USER',
